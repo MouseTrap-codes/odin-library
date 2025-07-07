@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+} */
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+}
+
+.read {
+    background-color: green;
+}
