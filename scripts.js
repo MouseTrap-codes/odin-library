@@ -1,22 +1,20 @@
 const myLibrary = [];
 
-function Book(_id, title, author, pages) {
-    if (!new.target) {
-        return Error("Incorrect usage of constructor");
+class Book {
+    constructor(_id, title, author, pages) {
+        this._id = _id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
     }
-    this._id = _id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = false;
-}
 
-Book.prototype.toString = function() {
-    return `${this.title} by ${this.author}; ${this.pages} pages.`
-}
+    toString() {
+        return `${this.title} by ${this.author}; ${this.pages} pages.`
+    }
 
-Book.prototype.toggleRead = function() {
-    this.read = true;
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
 
 function addBookToLibrary(title, author, pages) {
@@ -133,3 +131,4 @@ addNewBookButton.addEventListener("click", () => {
     modal.appendChild(form);
     modal.showModal();
 })
+
